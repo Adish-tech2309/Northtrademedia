@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="NorthTrade Media helps HVAC, plumbing and electrical companies in Durham Region and the GTA turn local searches into booked jobs." />
+  <link rel="icon" href="data:," />
+  <title>NorthTrade Media — Digital Marketing for the Trades</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --ink: #10273b;
+      --ink-2: #1e3b53;
+      --paper: #f5f7f8;
+      --surface: #ffffff;
+      --surface-2: #e9eef1;
+      --text: #142330;
+      --muted: #556573;
+      --line: #cbd5dc;
+      --orange: #ef6a22;
+      --orange-dark: #c94f0c;
+      --orange-soft: #fff0e7;
+      --blue-soft: #dbe8ef;
+      --success: #16704a;
+      --shadow: 0 24px 60px rgba(16, 39, 59, .14);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --max: 1180px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #dfeaf0;
+        --ink-2: #bcd0dc;
+        --paper: #0c1720;
+        --surface: #122431;
+        --surface-2: #1a303f;
+        --text: #f2f6f8;
+        --muted: #adbdc8;
+        --line: #38505f;
+        --orange: #ff7a30;
+        --orange-dark: #ff9b62;
+        --orange-soft: #352114;
+        --blue-soft: #172f3d;
+        --success: #79d8aa;
+        --shadow: 0 24px 70px rgba(0,0,0,.32);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--text);
+      font-family: Manrope, ui-sans-serif, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; width: 100%; }
+    a { color: inherit; }
+    button, select { font: inherit; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .skip { position: fixed; left: 12px; top: -80px; z-index: 100; background: var(--surface); padding: 10px 14px; border-radius: 8px; }
+    .skip:focus { top: 12px; }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 30px;
+      font-size: .88rem;
+      font-weight: 700;
+    }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--orange); }
+    .nav-cta { background: var(--ink); color: var(--paper); padding: 11px 17px; border-radius: var(--radius-sm); }
+    @media (prefers-color-scheme: dark) { .nav-cta { background: var(--orange); color: #16110c; } }
+
+    .hero { padding: 48px 0 88px; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: clamp(48px, 7vw, 92px); align-items: center; }
+    .place { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 20px; color: var(--muted); font-weight: 700; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; }
+    .place::before { content: ""; width: 24px; height: 3px; background: var(--orange); }
+    h1, h2, h3 { font-family: "Barlow Condensed", Impact, sans-serif; margin: 0; line-height: .96; color: var(--ink); }
+    h1 { font-size: clamp(3.8rem, 8vw, 7.2rem); letter-spacing: -.04em; max-width: 760px; }
+    .accent { color: var(--orange); }
+    .lead { max-width: 610px; margin: 26px 0 30px; color: var(--muted); font-size: clamp(1.03rem, 1.6vw, 1.24rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .button { border: 0; text-decoration: none; display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 50px; padding: 0 20px; border-radius: var(--radius-sm); background: var(--orange); color: #1a120e; font-weight: 800; box-shadow: 0 9px 25px rgba(239,106,34,.2); }
+    .button:hover { background: var(--orange-dark); color: #fff; }
+    .button.secondary { background: transparent; color: var(--ink); box-shadow: none; border: 1px solid var(--line); }
+    .button svg { width: 18px; height: 18px; }
+    .hero-note { display: flex; gap: 10px; align-items: center; margin-top: 26px; color: var(--muted); font-size: .84rem; }
+    .hero-note strong { color: var(--ink); }
+    .hero-note span { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
+    .hero-visual { position: relative; min-height: 590px; }
+    .hero-photo { height: 590px; object-fit: cover; object-position: 45% center; border-radius: 8px 80px 8px 8px; filter: saturate(.82) contrast(1.03); }
+    .hero-visual::before { content: ""; position: absolute; inset: 24px -24px -24px 24px; background: var(--ink); border-radius: 8px 80px 8px 8px; z-index: -1; }
+    .stamp { position: absolute; left: -38px; bottom: 38px; width: 190px; padding: 18px 20px; background: var(--orange); color: #1a120e; box-shadow: var(--shadow); }
+    .stamp strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 1.65rem; line-height: 1; }
+    .stamp span { font-size: .78rem; font-weight: 700; }
+
+    .problem { background: var(--ink); color: #dce6ec; padding: 74px 0; }
+    .problem-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; align-items: start; }
+    .problem h2 { color: #fff; font-size: clamp(2.9rem, 5.4vw, 5.2rem); }
+    .problem h2 .accent { color: var(--orange); }
+    .problem-copy > p { margin: 0 0 32px; color: #b9cad4; font-size: 1.08rem; max-width: 690px; }
+    .problems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.15); }
+    .problem-item { padding: 24px 20px; background: var(--ink); }
+    .problem-item strong { display: block; color: #fff; margin: 12px 0 7px; }
+    .problem-item p { margin: 0; color: #adc0cb; font-size: .89rem; line-height: 1.55; }
+    .num { color: var(--orange); font-family: "Barlow Condensed", sans-serif; font-size: 1.35rem; font-weight: 700; }
+
+    section { padding: 94px 0; }
+    .section-head { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: end; margin-bottom: 42px; }
+    .section-head h2 { font-size: clamp(3rem, 5vw, 5rem); }
+    .section-head p { margin: 0; color: var(--muted); max-width: 600px; }
+    .kicker { color: var(--orange); font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; }
+
+    .trades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .trade { background: var(--surface); overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-md); }
+    .trade img { aspect-ratio: 4/3; object-fit: cover; filter: saturate(.78); }
+    .trade:nth-child(2) img { object-position: center; }
+    .trade-body { padding: 24px; }
+    .trade h3 { font-size: 2.2rem; margin-bottom: 10px; }
+    .trade p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .tagrow { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 18px; }
+    .tag { font-size: .72rem; font-weight: 800; color: var(--ink-2); background: var(--surface-2); padding: 6px 9px; border-radius: 6px; }
+
+    .offer-shell { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); }
+    .tabs { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--surface-2); border-bottom: 1px solid var(--line); }
+    .tab { border: 0; border-right: 1px solid var(--line); padding: 18px; background: transparent; color: var(--muted); font-weight: 800; }
+    .tab:last-child { border-right: 0; }
+    .tab[aria-selected="true"] { background: var(--surface); color: var(--orange); box-shadow: inset 0 4px var(--orange); }
+    .offer-panel { display: grid; grid-template-columns: .78fr 1.22fr; gap: 42px; padding: 42px; }
+    .offer-panel[hidden] { display: none; }
+    .offer-panel h3 { font-size: clamp(2.4rem, 4vw, 3.8rem); }
+    .price { margin: 12px 0 20px; font-family: "Barlow Condensed", sans-serif; font-size: 2.4rem; font-weight: 700; color: var(--orange); }
+    .price small { color: var(--muted); font-family: Manrope, sans-serif; font-size: .75rem; font-weight: 600; }
+    .best { display: inline-block; margin-top: 14px; padding: 7px 10px; border-radius: 7px; background: var(--orange-soft); color: var(--orange-dark); font-size: .78rem; font-weight: 800; }
+    .feature-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px 28px; margin: 0; padding: 0; list-style: none; }
+    .feature-list li { position: relative; padding-left: 26px; color: var(--muted); }
+    .feature-list li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: 900; }
+    .fineprint { margin: 28px 0 0; color: var(--muted); font-size: .78rem; }
+
+    .process { background: var(--blue-soft); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .step { padding: 10px 26px 12px 0; border-top: 2px solid var(--line); position: relative; }
+    .step::before { content: ""; width: 12px; height: 12px; position: absolute; top: -7px; left: 0; border-radius: 50%; background: var(--orange); }
+    .step .week { color: var(--orange-dark); font-weight: 800; font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; }
+    .step h3 { margin: 14px 0 9px; font-size: 1.9rem; }
+    .step p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.55; }
+
+    .planner-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 28px; align-items: stretch; }
+    .planner-intro { padding: 8px 28px 8px 0; }
+    .planner-intro h2 { font-size: clamp(3rem, 5vw, 5rem); }
+    .planner-intro p { color: var(--muted); }
+    .planner { background: var(--ink); color: #e4edf2; padding: 36px; border-radius: 8px 44px 8px 8px; }
+    .field { margin-bottom: 22px; }
+    .field label { display: block; font-weight: 800; color: #fff; margin-bottom: 8px; font-size: .9rem; }
+    .field select { width: 100%; min-height: 50px; border: 1px solid #4a6475; background: #173348; color: #fff; border-radius: 9px; padding: 0 13px; }
+    .planner .button { width: 100%; }
+    .recommendation { margin-top: 24px; border-top: 1px solid #456071; padding-top: 24px; display: none; }
+    .recommendation.show { display: block; }
+    .recommendation h3 { color: #fff; font-size: 2rem; margin-bottom: 10px; }
+    .recommendation p { margin: 0 0 12px; color: #c2d2dc; font-size: .92rem; }
+    .rec-pill { display: inline-block; background: var(--orange); color: #17100b; padding: 6px 10px; border-radius: 7px; font-size: .78rem; font-weight: 900; margin-bottom: 12px; }
+
+    .final { padding-top: 20px; }
+    .final-box { background: var(--orange); color: #1a120e; padding: clamp(34px, 6vw, 74px); border-radius: 8px 64px 8px 8px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: center; }
+    .final h2 { color: #1a120e; font-size: clamp(3rem, 5.5vw, 5.4rem); }
+    .final p { margin: 16px 0 0; max-width: 640px; font-weight: 600; }
+    .final-actions { display: flex; flex-direction: column; gap: 12px; }
+    .final .button { background: #10273b; color: #fff; box-shadow: none; }
+    .final .button.secondary { background: transparent; color: #1a120e; border-color: rgba(26,18,14,.45); }
+    footer { padding: 38px 0 calc(38px + env(safe-area-inset-bottom)); color: var(--muted); font-size: .78rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 24px; align-items: center; }
+    .footer-row a { color: var(--muted); text-underline-offset: 3px; }
+
+    @media (max-width: 860px) {
+      .wrap { width: min(calc(100% - 30px), var(--max)); }
+      nav { justify-content: flex-start; gap: 18px; min-height: 66px; overflow: hidden; }
+      nav a:not(.nav-cta) { display: none; }
+      .nav-cta { margin-left: auto; }
+      .hero { padding: 30px 0 72px; }
+      .hero-grid, .problem-grid, .section-head, .offer-panel, .planner-grid, .final-box { grid-template-columns: 1fr; }
+      .hero-grid { gap: 48px; }
+      h1 { font-size: clamp(3.7rem, 17vw, 5.6rem); }
+      .hero-visual { min-height: 450px; margin-right: 10px; }
+      .hero-photo { height: 450px; border-radius: 6px 52px 6px 6px; }
+      .hero-visual::before { inset: 14px -14px -14px 14px; border-radius: 6px 52px 6px 6px; }
+      .stamp { left: -8px; bottom: 20px; width: 170px; }
+      .problem-grid { gap: 36px; }
+      .problems, .trades, .steps { grid-template-columns: 1fr; }
+      .problem-item { border-bottom: 1px solid rgba(255,255,255,.12); }
+      section { padding: 70px 0; }
+      .section-head { gap: 18px; }
+      .trades { gap: 16px; }
+      .trade { display: grid; grid-template-columns: 42% 58%; }
+      .trade img { height: 100%; aspect-ratio: auto; }
+      .trade-body { padding: 20px; }
+      .tabs { grid-template-columns: 1fr; }
+      .tab { border-right: 0; border-bottom: 1px solid var(--line); text-align: left; }
+      .tab:last-child { border-bottom: 0; }
+      .tab[aria-selected="true"] { box-shadow: inset 4px 0 var(--orange); }
+      .offer-panel { padding: 28px 22px; gap: 26px; }
+      .feature-list { grid-template-columns: 1fr; }
+      .steps { gap: 30px; }
+      .planner-intro { padding-right: 0; }
+      .final-box { gap: 26px; }
+      .footer-row { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .actions { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+      .hero-note { align-items: flex-start; }
+      .trade { display: block; }
+      .trade img { aspect-ratio: 16/9; }
+      .planner { padding: 26px 20px; border-radius: 8px 30px 8px 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <nav aria-label="Primary navigation">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a class="nav-cta" href="#planner">Build your plan</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="place">Durham Region + GTA</div>
+          <h1>More booked jobs.<br><span class="accent">Less guesswork.</span></h1>
+          <p class="lead">NorthTrade Media helps HVAC, plumbing and electrical companies turn local searches into qualified calls—with Google Ads, local visibility and clean follow-up systems built for the trades.</p>
+          <div class="actions">
+            <a class="button" href="#planner">Build your growth plan
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="button secondary" href="#pricing">View packages</a>
+          </div>
+          <div class="hero-note"><span></span><div><strong>Focused on service businesses.</strong> No vague brand campaigns. No jargon-heavy reporting.</div></div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-photo" src="assets/img0.jpg" alt="A skilled trades technician working on equipment" />
+          <div class="stamp"><strong>Built for trades.</strong><span>Local strategy. Practical execution.</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="problem" aria-labelledby="problem-title">
+      <div class="wrap problem-grid">
+        <div><h2 id="problem-title">Clicks don't fill a <span class="accent">schedule.</span></h2></div>
+        <div class="problem-copy">
+          <p>Homeowners move fast when the heat stops or a pipe bursts. Your marketing has to show up at the right moment, earn trust quickly and make the next step obvious.</p>
+          <div class="problems">
+            <article class="problem-item"><span class="num">01</span><strong>Get found locally</strong><p>Show up where ready-to-book homeowners are already looking.</p></article>
+            <article class="problem-item"><span class="num">02</span><strong>Turn interest into calls</strong><p>Clear service pages and offers built around real customer intent.</p></article>
+            <article class="problem-item"><span class="num">03</span><strong>Know what worked</strong><p>Plain-language reporting tied to enquiries, not vanity metrics.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Who we help</div><h2 id="services-title">One market.<br>Three core trades.</h2></div>
+          <p>Each campaign starts with the same question: what does a homeowner need to see before they trust your team with the job? The answer changes by trade, service area and season.</p>
+        </div>
+        <div class="trades">
+          <article class="trade">
+            <img src="assets/img0.jpg" alt="HVAC technician servicing equipment" />
+            <div class="trade-body"><h3>HVAC</h3><p>Seasonal campaigns for repair, replacement and maintenance demand.</p><div class="tagrow"><span class="tag">Heating</span><span class="tag">Cooling</span><span class="tag">Maintenance</span></div></div>
+          </article>
+          <article class="trade">
+            <img src="assets/img2.jpg" alt="Plumbing tools arranged beside a work area" />
+            <div class="trade-body"><h3>Plumbing</h3><p>High-intent visibility for emergency calls and planned installs.</p><div class="tagrow"><span class="tag">Emergency</span><span class="tag">Repairs</span><span class="tag">Installations</span></div></div>
+          </article>
+          <article class="trade">
+            <img src="assets/img3.jpg" alt="Electrician working on an electrical panel" />
+            <div class="trade-body"><h3>Electrical</h3><p>Local campaigns that make credentials, service and response clear.</p><div class="tagrow"><span class="tag">Residential</span><span class="tag">Upgrades</span><span class="tag">Service calls</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" aria-labelledby="pricing-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Simple packages</div><h2 id="pricing-title">Choose your next<br>growth stage.</h2></div>
+          <p>Start with the channel that can create the clearest return. Add complexity only when the basics are measured, repeatable and working.</p>
+        </div>
+        <div class="offer-shell">
+          <div class="tabs" role="tablist" aria-label="Service packages">
+            <button class="tab" role="tab" id="tab-local" aria-controls="panel-local" aria-selected="true">Local Foundation</button>
+            <button class="tab" role="tab" id="tab-leads" aria-controls="panel-leads" aria-selected="false">Lead Engine</button>
+            <button class="tab" role="tab" id="tab-market" aria-controls="panel-market" aria-selected="false">Market Leader</button>
+          </div>
+          <div class="offer-panel" id="panel-local" role="tabpanel" aria-labelledby="tab-local">
+            <div><h3>Own your local basics.</h3><div class="price">$1,500 <small>CAD / month</small></div><span class="best">Best for a first focused campaign</span></div>
+            <div><ul class="feature-list"><li>Google Business Profile optimization</li><li>Local search campaign setup</li><li>One priority service campaign</li><li>Conversion-focused landing page plan</li><li>Call and form tracking setup</li><li>Monthly plain-language report</li></ul><p class="fineprint">Advertising spend is paid directly to the platform and is not included in the management fee.</p></div>
+          </div>
+          <div class="offer-panel" id="panel-leads" role="tabpanel" aria-labelledby="tab-leads" hidden>
+            <div><h3>Build a steady lead flow.</h3><div class="price">$2,500 <small>CAD / month</small></div><span class="best">Best for established local operators</span></div>
+            <div><ul class="feature-list"><li>Everything in Local Foundation</li><li>Multiple service campaigns</li><li>Landing-page copy direction</li><li>Lead-quality review</li><li>Remarketing campaign setup</li><li>Biweekly optimization review</li></ul><p class="fineprint">Advertising spend is paid directly to the platform and is not included in the management fee.</p></div>
+          </div>
+          <div class="offer-panel" id="panel-market" role="tabpanel" aria-labelledby="tab-market" hidden>
+            <div><h3>Compete across your territory.</h3><div class="price">$4,000 <small>CAD / month</small></div><span class="best">Best for multi-crew growth</span></div>
+            <div><ul class="feature-list"><li>Everything in Lead Engine</li><li>Multi-area campaign structure</li><li>Seasonal offer planning</li><li>CRM handoff recommendations</li><li>Competitor and search-gap review</li><li>Monthly strategy working session</li></ul><p class="fineprint">Advertising spend is paid directly to the platform and is not included in the management fee.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">How it works</div><h2 id="process-title">From visibility<br>to booked work.</h2></div>
+          <p>A focused launch sequence that respects your time. We learn the business, map demand, build the campaign and improve from real enquiry quality.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><span class="week">Step 1</span><h3>Diagnose</h3><p>Review your service area, priority jobs, website, Google presence and current lead sources.</p></article>
+          <article class="step"><span class="week">Step 2</span><h3>Build</h3><p>Shape the offer, campaign structure, keywords, exclusions and conversion path.</p></article>
+          <article class="step"><span class="week">Step 3</span><h3>Launch</h3><p>Activate tracking, check every route to contact and release a controlled campaign.</p></article>
+          <article class="step"><span class="week">Step 4</span><h3>Improve</h3><p>Use search terms and lead quality to shift spend toward the jobs you want more of.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="planner" aria-labelledby="planner-title">
+      <div class="wrap planner-grid">
+        <div class="planner-intro"><div class="kicker">60-second fit check</div><h2 id="planner-title">Build your starting plan.</h2><p>Choose what fits your business today. You’ll get a practical starting recommendation—without made-up projections or inflated promises.</p></div>
+        <form class="planner" id="planForm">
+          <div class="field"><label for="trade">Your primary trade</label><select id="trade" required><option value="">Select one</option><option value="HVAC">HVAC</option><option value="plumbing">Plumbing</option><option value="electrical">Electrical</option><option value="other home service">Other home service</option></select></div>
+          <div class="field"><label for="goal">Your immediate goal</label><select id="goal" required><option value="">Select one</option><option value="visibility">Show up more often in local search</option><option value="leads">Generate more qualified calls</option><option value="territory">Expand into more service areas</option></select></div>
+          <div class="field"><label for="stage">Current marketing stage</label><select id="stage" required><option value="">Select one</option><option value="starting">Starting from the basics</option><option value="active">Running some marketing already</option><option value="scaling">Ready to scale a proven channel</option></select></div>
+          <button class="button" type="submit">Show my recommended start</button>
+          <div class="recommendation" id="recommendation" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="final" aria-labelledby="final-title">
+      <div class="wrap final-box">
+        <div><h2 id="final-title">Make your next call count.</h2><p>Start with one priority service, one clear territory and a campaign your team can actually follow up.</p></div>
+        <div class="final-actions"><a class="button" href="#planner">Build your plan</a><a class="button secondary" href="#pricing">Compare packages</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-row"><span>NorthTrade Media · Digital marketing for trades and home services</span><span>Serving Durham Region and the Greater Toronto Area</span></div></footer>
+
+  <script>
+    (function () {
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+      tabs.forEach(function (tab, index) {
+        tab.addEventListener('click', function () { activateTab(index); });
+        tab.addEventListener('keydown', function (event) {
+          if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+            event.preventDefault();
+            var next = event.key === 'ArrowRight' ? (index + 1) % tabs.length : (index - 1 + tabs.length) % tabs.length;
+            tabs[next].focus(); activateTab(next);
+          }
+        });
+      });
+      function activateTab(index) {
+        tabs.forEach(function (tab, i) {
+          var selected = i === index;
+          tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+          document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
+        });
+      }
+
+      var form = document.getElementById('planForm');
+      var output = document.getElementById('recommendation');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var trade = document.getElementById('trade').value;
+        var goal = document.getElementById('goal').value;
+        var stage = document.getElementById('stage').value;
+        if (!trade || !goal || !stage) return;
+        var plan = 'Local Foundation';
+        var focus = 'tightening your Google Business Profile, defining one priority service and launching one measurable local search campaign';
+        if (goal === 'leads' || stage === 'active') { plan = 'Lead Engine'; focus = 'separating campaigns by service intent, improving the call path and reviewing which enquiries turn into real jobs'; }
+        if (goal === 'territory' || stage === 'scaling') { plan = 'Market Leader'; focus = 'structuring campaigns by territory, protecting budget by service line and planning around seasonal demand'; }
+        output.innerHTML = '<span class="rec-pill">Recommended: ' + plan + '</span><h3>Start focused, then widen.</h3><p>For a ' + trade + ' business, begin by ' + focus + '.</p><p>Your first planning session should confirm service area, average job value, crew capacity and how quickly calls are answered.</p>';
+        output.classList.add('show');
+        output.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+      });
+    }());
+  </script>
+</body>
+</html>
