@@ -256,7 +256,7 @@
           <div class="hero-note"><span></span><div><strong>Focused on service businesses.</strong> No vague brand campaigns. No jargon-heavy reporting.</div></div>
         </div>
         <div class="hero-visual">
-          <img class="hero-photo" src="assets/img0.jpg" alt="A skilled trades technician working on equipment" />
+          <img class="hero-photo" src="assets/img0.b64" alt="A skilled trades technician working on equipment" />
           <div class="stamp"><strong>Built for trades.</strong><span>Local strategy. Practical execution.</span></div>
         </div>
       </div>
@@ -284,15 +284,15 @@
         </div>
         <div class="trades">
           <article class="trade">
-            <img src="assets/img0.jpg" alt="HVAC technician servicing equipment" />
+            <img src="assets/img0.b64" alt="HVAC technician servicing equipment" />
             <div class="trade-body"><h3>HVAC</h3><p>Seasonal campaigns for repair, replacement and maintenance demand.</p><div class="tagrow"><span class="tag">Heating</span><span class="tag">Cooling</span><span class="tag">Maintenance</span></div></div>
           </article>
           <article class="trade">
-            <img src="assets/img2.jpg" alt="Plumbing tools arranged beside a work area" />
+            <img src="assets/img2.b64" alt="Plumbing tools arranged beside a work area" />
             <div class="trade-body"><h3>Plumbing</h3><p>High-intent visibility for emergency calls and planned installs.</p><div class="tagrow"><span class="tag">Emergency</span><span class="tag">Repairs</span><span class="tag">Installations</span></div></div>
           </article>
           <article class="trade">
-            <img src="assets/img3.jpg" alt="Electrician working on an electrical panel" />
+            <img src="assets/img3.b64" alt="Electrician working on an electrical panel" />
             <div class="trade-body"><h3>Electrical</h3><p>Local campaigns that make credentials, service and response clear.</p><div class="tagrow"><span class="tag">Residential</span><span class="tag">Upgrades</span><span class="tag">Service calls</span></div></div>
           </article>
         </div>
@@ -404,5 +404,14 @@
       });
     }());
   </script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('img[src$=".b64"]').forEach(function(im){
+    fetch(im.getAttribute('src')).then(function(r){return r.text();}).then(function(b){
+      im.src='data:image/jpeg;base64,'+b.trim();
+    });
+  });
+});
+</script>
 </body>
 </html>
